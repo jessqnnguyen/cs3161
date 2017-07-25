@@ -1,6 +1,7 @@
 # Week 1 Lecture
 
 * No lecture week 3
+* Mid session exam week 5!
 * 2nd hour on Friday lecture is optional, for revision
 
 ## TODO
@@ -59,7 +60,14 @@ int foo() {
 
 ##### Summary
 
-Program String -> **Lexer** -> Sequence of tokens -> **Parser** -> Parse tree -> **Semantic Analysis** -> Annotated Parse Tree -> **Optimiser** -> Intermediate code -> Annotated Parse Tree -> **Code generation** -> Machine code
+| Input | Stage | Output |
+| ----- | ------| -------|
+| Program string | Lexer | Sequence of tokens |
+| Sequence of tokens | Parser  | Parse tree |
+| Parse Tree | Semantic Analysis | Annotated parse tree |
+| Annotated parse tree | Optimiser  | Intermediate code |
+| Intermediate code --> Annotated parse tree | Code generation  | Machine code |
+
 
 ### In this course
 
@@ -68,3 +76,6 @@ We are looking at:
 * specify the grammar of programming languages
 * specify and analyse sttaic and dynamic properties of different languages and language features
 * discuss and prove the correctness of different optimisations
+
+
+
