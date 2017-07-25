@@ -1,0 +1,25 @@
+-- Haskell Playground 1.0
+main
+
+1 + 4
+
+-- f 6 7
+
+-- BUILDING LISTS
+
+[1, 2, 3]
+
+-- a string is just a list of characters in HS hence it renders as a string in HS
+['a', 'b', 'c']
+
+-- let's use cons! 
+[] -- Nil operator
+1 : []
+1 : 2 : 3 : []
+
+-- this doesn't work - only lists of one data type! (obviously)
+-- [1, 'a']
+
+-- trying out lexer!
+-- it ignores 'blah'
+lexer "((((blah)"
