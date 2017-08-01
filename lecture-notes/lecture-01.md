@@ -6,7 +6,7 @@
 
 ## TODO
 
-- [ ] Complete the assumed knowledge exercise
+- [  ] Complete the assumed knowledge exercise
 
 
 ## Assessment
