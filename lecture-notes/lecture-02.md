@@ -148,3 +148,58 @@ dropWhile isDigit "123asd5" = "asd5"
 
 * This is because the function type constructor -> is right associative so 
 * `a -> b -> c` is actually the same as `a -> (b -> c)`
+
+#### Example code
+
+```
+module Scratch where
+  
+data Foo = F | G deriving (Show, Eq)
+
+x :: Foo
+x = F
+ 
+-- interesting cases of brackets
+-- this returns c!
+foo :: ((a, b) -> c) -> (a -> b -> c)
+foo f a b =  f (a, b)
+
+-- does the same thing but on a pair
+-- takes two inputs again, a function (a -> -> b -> c) and a pair (a, b)
+-- fum takes a function f that I can partially  apply and then applies it to second arg
+fum :: (a -> b -> c) -> ((a, b) -> c)
+fum f (a, b) = f a b
+
+-- note the subtle difference in function call!
+
+```
+
+#### Playground code
+
+```
+x
+
+x == x 
+
+(&&) True False
+
+--f = (*) 10
+
+--f 90
+
+map ((*) 10) [1, 2, 3, 4, 5]
+
+((+) 100) 45
+
+fum (+) (9, 8)
+
+(foo (fum (+))) 9 8 
+
+-- give it a function and it'll spit back a function that can be partially applied
+curry 
+-- the opposite!
+uncurry
+
+-- (:) 1 takes a list and puts 1 in front of it and map maps this function to args
+map ((:) 1) [[1,2, 3], [3, 4]]
+```

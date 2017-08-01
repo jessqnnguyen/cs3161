@@ -17,3 +17,12 @@ map ((*) 10) [1, 2, 3, 4, 5]
 fum (+) (9, 8)
 
 (foo (fum (+))) 9 8 
+
+-- give it a function and it'll spit back a function that can be partially applied
+curry 
+-- the opposite!
+uncurry
+
+-- (:) 1 takes a list and puts 1 in front of it and map maps this function to args
+map ((:) 1) [[1,2, 3], [3, 4]]
+
