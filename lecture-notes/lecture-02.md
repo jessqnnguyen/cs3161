@@ -1,6 +1,6 @@
 # Week 2 Lecture 
 
-##TODO
+## TODO
 
 * [ ] Review Rule Induction: Example 2
 
@@ -14,13 +14,13 @@ Show some property P holds for all natural numbers:
 
 Property P(n): `n + 0 = 0 + n`
 
-** Show P(0) is true **
+#### Show P(0) is true
 
 Rule: `0 nat`
 
 Hence P(0) is true.
 
-** Show P(n) is true **
+#### Show P(n) is true
 
 Rule : `n nat / s(n) nat`
 
