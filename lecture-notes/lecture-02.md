@@ -6,7 +6,6 @@
 * [ ] Fix MathJax rendering on this file
 
 ## Tuesday Lecture
---------------------
 
 ### Rule induction
 
@@ -207,7 +206,6 @@ uncurry
 map ((:) 1) [[1,2, 3], [3, 4]]
 ```
 ## Friday Lecture
-----------------------
 
 ### Judgments
 * A judgment states that a certain property holds for a specific object which corresponds to a set membership
@@ -253,4 +251,8 @@ Multiple ways to represent
 * $$$1 + (2 * 3)$$$
 * $$$(1) + ((2) * (3))$$$
 
+### Concrete vs abstract
+
+* Concrete is user friendly
+* Abstract is compiler friendly
 
