@@ -5,50 +5,53 @@
 * [ ] Review Rule Induction: Example 
 * [ ] Fix MathJax rendering on this file
 
-## Rule induction
+## Tuesday Lecture
+--------------------
+
+### Rule induction
 
 * Given a set of rules $$$R = {J_1, J_2, ..., J_n}$$$ if property $$$P$$$ holds for all $$$J_i$$$ then $$$J$$$ holds.
 
-### Example 1
+#### Example 1
 
 Show some property P holds for all natural numbers:
 
 Property P(n): `n + 0 = 0 + n`
 
-#### Show P(0) is true
+##### Show P(0) is true
 
 Rule: `0 nat`
 
 Hence P(0) is true.
 
-#### Show P(n) is true
+##### Show P(n) is true
 
 Rule : `n nat / s(n) nat`
 
 Hence n holds for any n in nat. 
 
-### Example 2
+#### Example 2
 
 Let pl(s) be the number of left parethesis and pr(s) be the number of right parenthesis.
 
-#### Proof outline
+##### Proof outline
 
 We have to consider 3 cases, 1 case per rule.
 
-##### Case 1: Base case
+###### Case 1: Base case
 
 $$s = \epsilon$$
 
 $$pl(s) = pr(s) = 0 $$
 
-##### Case 2: Induction Hypothesis
+###### Case 2: Induction Hypothesis
 
 $$pl(\ (s)\ \) =  pl( \ ( \ \) + pl( \ s ) \ \) $$
 
 $$ = 1 + pl(\ s) \ \ ) = \ 0$$
 $$ = 1 + pl(\ s \ ) + pl( \ ) \ \ )$$
 
-### Example 3
+#### Example 3
 
 Define some basic arithmetic expression rules to perform operations on 2 numbers $$$e_1$$$ and $$$e_2$$$.
 
@@ -75,7 +78,7 @@ $$\frac{1 \ PExpr}{1 \ SExpr}$$
 
 $$\frac{1 \ FExpr}{1 \ PExpr}$$
 
-## Typeclasses
+### Typeclasses
 
 * What could be the tye of the function (==) which compares two data items for equality?
 	* `(==) :: a -> a -> Bool`
@@ -96,7 +99,7 @@ data Token
 ```
 
 
-### Typeclass: Num
+#### Typeclass: Num
 
 ```
 class Num a where
@@ -111,7 +114,7 @@ class Num a where
 
 * Haskell is much more restrictive with implicit conversions such as (+) on two vars say, an int and a float.
 
-### Infix operators
+#### Infix operators
 
 Recall:
 
@@ -120,7 +123,7 @@ Recall:
 * `7 div 3`
 * `div 7 3`
 
-### Tuples
+#### Tuples
 
 We use lists when we know the element type but not the size of the list.
 
@@ -149,7 +152,7 @@ dropWhile isDigit "123asd5" = "asd5"
 * This is because the function type constructor -> is right associative so 
 * `a -> b -> c` is actually the same as `a -> (b -> c)`
 
-#### Example code
+##### Example code
 
 ```
 module Scratch where
@@ -174,7 +177,7 @@ fum f (a, b) = f a b
 
 ```
 
-#### Playground code
+##### Playground code
 
 ```
 x
@@ -203,3 +206,51 @@ uncurry
 -- (:) 1 takes a list and puts 1 in front of it and map maps this function to args
 map ((:) 1) [[1,2, 3], [3, 4]]
 ```
+## Friday Lecture
+----------------------
+
+### Judgments
+* A judgment states that a certain property holds for a specific object which corresponds to a set membership
+* Generally judgements express a relationship between a number of objects (n-ary relations)
+
+#### Examples
+
+###### Binary
+* 4 divides 16 
+* ail is a substring of mail
+
+###### n-ary relation 
+* Defines sets of n-tuples
+
+* substring: {("", "mail"), ("m", "mail")}
+* plus_equal: {(0,0,0), (0,1,1)}
+
+
+### Relations
+
+Recall a binary relation R is:
+
+* symmetric 
+* reflexive
+* transitive
+
+`A relation which is symmetric, reflexive and transitive is called an equivalence relation.`
+
+
+### Concrete Syntax
+
+* The inference rules for SExpr we covered last week defined the concrete syntax of a simple language - including precedence and associativity
+* Designed with the human user in mind
+
+#### Problem - ambiguous grammar!
+* Concrete syntax contains too much information! There are too many ways to semantically represent the same expression which is not adequate for internal representation during compile time
+
+##### Example
+
+Multiple ways to represent 
+
+* $$$1 + 2 * 3$$$
+* $$$1 + (2 * 3)$$$
+* $$$(1) + ((2) * (3))$$$
+
+
