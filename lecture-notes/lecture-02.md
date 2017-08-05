@@ -4,6 +4,7 @@
 
 * [ ] Review Rule Induction: Example 
 * [ ] Fix MathJax rendering on this file
+* [ ] Finish notes for substitution and bindings
 
 ## Tuesday Lecture
 
@@ -255,4 +256,29 @@ Multiple ways to represent
 
 * Concrete is user friendly
 * Abstract is compiler friendly
+
+### Bindings
+
+`TODO`
+
+### Substitution
+
+`TODO`
+
+### Higher-order abstract syntax
+
+* Variables and abstraction as special constructs
+* A term of the form $$ x.t $$ is called an abstraction
+* A higher-order term can have one of four forms
+	1. A constant (e.g. int, string)
+	2. A variable $$$x$$$
+	3. Operator $$$ (t_1, t_2, ... t_n) $$$
+	4. $$$x.t$$$ (i.e. the var $$$x$$$ is bound in term $$$ t $$$)
+		* `x. Plus x (Num 1)`
+		* `x.y. Plus x y`
+
+
+
+
+
 
