@@ -1,4 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # Week 4 Lecture
 
@@ -8,7 +7,7 @@ Recall: There was no lecture last week!
 
 * [ ] Complete the sample midsession exam before Week 5
 
-## Tuesday Lecture
+## Tuesday Lecture: Semantics
 
 ### Substitution
 
@@ -66,4 +65,23 @@ Three main rules:
 
 * Properties of a program that are obvious without executing the program
 * Can be checked by a compiler or an external tool such as `lint`
+
+#### Scoping
+
+* We use inference rules to check scoping
+
+* Key idea: use an environment to keep track of all bound vars, for now this is just a set of var names
+
+$$ {x_1, x_2, ..., x_n} ⊢ e \ ok $$
+
+assumes vars $$$ x_1 .. x_n $$$ are bound then $$$ e \ ok $$$ holds
+
+#### Dynamic semantics
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+
+
+
 
