@@ -35,7 +35,28 @@ $$ (Op t_1 .. t_n) [x := y] = Op (t_1 [x := y]) .. Op (t_2 [x := y]) $$
 Three main rules:
 
 * $$$ \alpha $$$-conversion
+	* if $$$ t \equiv_{a} s $$$ then two terms are equivalent in the calculus
 * $$$ \beta $$$-reduction
-* $$$ \eta $$$-
+	* $$$ (\lambda x. t)s$$$ can be reduced to $$$t[x:=s]$$$
+* $$$ \eta $$$-conversion
+	* $$$ \lambda x \ (f \ x) $$$ is equivalent to $$$ f $$$ if $$$ x $$$ is not free in $$$ f $$$
 
+
+#### Example of $$$ \beta $$$-reduction
+
+![](beta-reduction-01.png)
+
+#### Defining true and false in $$$ \lambda $$$ calculus
+
+![](lambda-calculus-boolean-definition.png)
+
+#### $$$ \lambda $$$ calculus in Haskell examples
+
+* Another name for $$$ \lambda $$$ calculus is a function that doesn't have a name
+
+```
+(\ x -> x) 10
+
+(\ x -> \y -> 2* x + y) 10 2
+```
 
