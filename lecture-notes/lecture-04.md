@@ -1,3 +1,5 @@
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # Week 4 Lecture
 
 Recall: There was no lecture last week!
@@ -59,4 +61,9 @@ Three main rules:
 
 (\ x -> \y -> 2* x + y) 10 2
 ```
+
+### Static semantics
+
+* Properties of a program that are obvious without executing the program
+* Can be checked by a compiler or an external tool such as `lint`
 
