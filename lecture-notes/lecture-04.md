@@ -78,10 +78,56 @@ assumes vars $$$ x_1 .. x_n $$$ are bound then $$$ e \ ok $$$ holds
 
 #### Dynamic semantics
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+* Specifies the program execution process
+* May include side effects and computed values
+
+##### Denotational Semantics
+* Idea: syntactic expressions are mapped to mathematical objects
+
+###### Examples
+
+* Mapping to lambda-calculus
+* fix-point semantics over complete partial orders
+
+##### Axiomatic Semantics
+
+* Statements over programs in the form of axioms describing logic program properties
+
+###### Hoare's calculus
+
+{$$$P$$$} $$$prgrm$$$ {$$$Q$$$}
+
+###### Dijkstra's Weakest Precondition (WP) calculus
+
+$$ wp(prgrm, Q) = P $$
+
+* Hoare's and Dijkstra'a WP is used typically  to prove properties of C-like/imperative languages
+
+##### Operational Semantics
+
+* Idea: defines semantics in terms of an abstract machine
+
+Two main forms:
+
+* Small step semantics \ structural operational semantics (SOS): step by step execution of a program
+* Big step, natural \evaluation semantics: specifies result of execution of complete programs
+
+We look at both, small step as well as big step semantics
+
+#### Structural Operational Semantics
+
+##### Transition systems
+
+A transition system which specifies the step by step eval of a program which consists of:
+
+* a set of states S on an abstract computing device
+* a set of initial states I $$$ \subseteq $$$ S
+* a set of final states F $$$ F \subseteq $$$ 
+* a relation $$$↦ :: S×S$$$ describe the effect of a single evaluation step on state s
 
 
+#### Evaluation or Big Step Semantics
 
-
+s
 
 
