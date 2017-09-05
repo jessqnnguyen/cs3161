@@ -1,5 +1,38 @@
 # Week 5 Lecture
 
+## Exam revision
+
+Recall that:
+
+```
+data Tree = Node Int Tree Tree
+		  | Leaf
+```
+Recall this is a type in Haskell which defines a set of possible types of a Tree.
+
+The equivalent in a judgement form is:
+
+![](judgement-tree.png)
+
+### Concrete vs Abstract
+
+Recall that concrete is more human readable:
+
+```
++ * ()
+(2 * 5) + 7 * 5
+```
+Abstract is post fix and always rendered the same from concrete (only one representation of the same thing vs multiple representations of the same thing in concrete syntax):
+
+`Add (Mult (Num 2) (Num 5)) (Mult (Num 7) (Num 5))`
+
+This is the tree:
+
+![](concrete-tree.png)
+
+
+
+
 ## MinHS
 
 * A stripped down, purely functional language
