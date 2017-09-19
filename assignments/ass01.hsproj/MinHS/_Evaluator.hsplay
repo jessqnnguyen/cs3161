@@ -1,0 +1,27 @@
+-- Haskell Playground 1.0
+g = E.empty
+evalE g (Num 2)
+
+evalE g (Con "True")
+
+evalE g (App (App (Prim Add) (Num 5)) (Num 3))
+
+evalE g (App (App (Prim Add) (Num 5)) (Num 5))
+
+evalE g (App (Prim Neg) (Num 5))
+
+evalE g (App (Prim Neg) (Num 5))
+
+evalE g (App (App (Prim Add) (Num 5)) (Num 6))
+
+evalE g (App (App (Prim Gt) (Num 5)) (Num 6))
+
+checkIntOp Gt 2 4
+
+checkIntOp Ne 4 4 
+
+Let [(Bind "x" (TypeCon List) ["1", "2", "3"] (Var "x"))] (App (Prim Head) (Var "x"))
+
+
+evalE E.empty (Num 2)
+

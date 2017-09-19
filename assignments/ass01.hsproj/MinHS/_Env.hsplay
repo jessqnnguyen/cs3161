@@ -1,0 +1,8 @@
+-- Haskell Playground 1.0
+--env = empty 
+
+env = addAll empty [("x", 2), ("y", 4)]
+
+lookup env "x"
+
+lookup env "y" 

@@ -1,0 +1,29 @@
+name: ass01
+version: 1.0
+cabal-version: 1.22
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+extra-source-files:
+    run_tests.sh
+    minhs-1.cabal
+x-ghc-framework-version: 8.0.2-8.9-3
+x-last-ide-version: HfM1.5.1
+Executable ass01
+  buildable: True
+  build-depends:
+      base -any,
+      ansi-wl-pprint -any,
+      parsec -any,
+      optparse-applicative -any,
+      containers -any
+  default-language: Haskell2010
+  other-modules:
+      MinHS.Evaluator
+      MinHS.Parse
+      MinHS.Env
+      MinHS.Syntax
+      MinHS.TypeChecker
+      MinHS.Pretty
+      Main
+      Setup
