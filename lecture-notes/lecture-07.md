@@ -36,3 +36,14 @@ foo = InL 6
 ### Dynamic Semantics: Typing rules
 
 ![](sum-type-dynamic-typing-rules.png)
+
+## Parametric polymorphism in MinHs
+
+* In Haskell when two vars are swapped it doesn't matter what type they are as it will always be  swapping pointers so it doesn't care what type they are
+
+* In MinHS no type inference so we must instantiate each polymorphic function with it's type vars 
+* 
+
+
+
+
