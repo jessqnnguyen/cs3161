@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+-- let z = x in (x + 1)
+
+Let [Bind "z" Nothing [] (Var "x")] (App (App (Prim Add) (Num 1)) (Num 2))
+
+--(Let ((Bind id typ args e1):bs) e2) 
+
+Case (Var "x")
+
+Case (Var "x") [(Alt "Inl" ["x"] (Con "Bool")),(Alt "Inr" ["y"] (Var "z"))]
+
+-- what does this case evaluate to?
+
+-- how does case work?
+
+-- how does unification work for product, function and sum types? 
+
+-- Go through if then else rule again
+

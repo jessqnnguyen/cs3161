@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+substitute (Subst ([("x", (TypeVar "z"))])) (Sum (TypeVar "x") (TypeVar "y")) 
+
+"x" =: (Sum (TypeVar "x") (TypeVar "y"))
+
+"y" =: (TypeVar "x")
