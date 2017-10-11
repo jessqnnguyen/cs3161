@@ -7,13 +7,24 @@ Let [Bind "z" Nothing [] (Var "x")] (App (App (Prim Add) (Num 1)) (Num 2))
 
 Case (Var "x")
 
-Case (Var "x") [(Alt "Inl" ["x"] (Con "Bool")),(Alt "Inr" ["y"] (Var "z"))]
+Case (Var "a") [(Alt "Inl" ["x"] (Con "Bool")),(Alt "Inr" ["y"] (Var "z"))]
 
 -- what does this case evaluate to?
 
--- how does case work?
-
--- how does unification work for product, function and sum types? 
+-- how does case work? it returns a type tau regardless of case? refer to slide 22 week 7
 
 -- Go through if then else rule again
 
+-- Concrete example of how to encode Let using data type Bind?
+
+Letfun (Bind "f" (Just (Ty (Arrow (Base Int) (Base Int)))) ["x"] (Var "x"))
+
+-- Letfun f. Int -> Int . x 
+
+-- Let z = x in x
+-- vs
+-- Let z = 2 in z + 1
+
+-- how to encode using Let [Bind] Exp?
+
+-- how does unification work for product, function and sum types? 

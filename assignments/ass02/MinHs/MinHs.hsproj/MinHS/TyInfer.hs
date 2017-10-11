@@ -168,6 +168,26 @@ inferExp g (If e e1 e2) = do
   let finalType = substitute u2 t2 
   let finalSub = (s <> s1 <> s2 <> u1 <> u2)
   return ((If e' e1' e2'), finalType, finalSub)
-inferExp g (Case e [Alt "Inl" [x] e1, Alt "Inr" [y] e2]) = error "Implement me!"
+inferExp g (Case e [Alt "Inl" [x] e1, Alt "Inr" [y] e2]) = do
+  (e', t, s) <- inferExp g e
+  al  <- fresh
+  let g0 =  E.add g (x,(Ty al))
+  let g1 = (substGamma s g0)
+  (e1', t1, s1) <- inferExp g1 e1
+  ar <- fresh
+  let g2 =  E.add g (y,(Ty ar))
+  let g3 = (substGamma s1 g2)
+  (e2', t2, s2) <- inferExp g3 e2
+  let p1 = substitute s2 (substitute s1 (substitute s (Sum al ar)))
+  let p2 = substitute s2 (substitute s1 t)
+  u <- unify p1 p2
+  let p3 = substitute u (substitute s2 t1)
+  let p4 = substitute u t2 
+  u' <- unify p3 p4
+  let outputExp = (Case e' [Alt "Inl" [x] e1', Alt "Inr" [y] e2'])
+  let outputType = substitute u' (substitute u t2)
+  let outputSub = u' <> u <>  s2 <> s1 <> s 
+  return (outputExp, outputType, outputSub)
+ 
 inferExp g (Case e _) = typeError MalformedAlternatives
 
