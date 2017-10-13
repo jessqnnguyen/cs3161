@@ -107,3 +107,27 @@ To make the operations of the ADT available using `Open (e, t.x::σ.e’)`
 Concrete example of `open`
 
 ![](week-11-02.png)
+
+#### Code example 
+
+![](week-11-03.png)
+
+* We encode information of what the type contains using type parametricisation
+* A type is a theorem e.g. `a -> (a + b)` is a type that encodes the theorem that a implies a or b
+
+![](week-11-04.png)
+
+* Z is a singleton type and so is Zero
+
+![](week-11-05.png)
+
+* 'head and 'tail are total functions so if you pass in an empty list it will generate a type error at compile time as opposed to run time error
+
+e.g.
+
+![](week-11-06.png)
+
+* hence encoding information into types reduces the occurrence of runtime errors 
+
+
+
