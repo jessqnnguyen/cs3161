@@ -1,5 +1,7 @@
 # Week 8 Lecture - Type Inference
 
+`Tuesday, 12th September`
+
 ## Principal type
 
 We write τ’≤ τ if τ’ is less general than τ, that is τ’ is an instance of τ
