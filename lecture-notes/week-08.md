@@ -136,6 +136,58 @@ if S is the most general unifier (mgu) of τ1 and τ2
 * these rules are syntax directed
 * the environment and expression are input and unifier and type are output  
 
+Example that our type inference algorithm actually works for a type inference of an `Apply` expression:
+
+![](week-08-14.png)
+
+Another example for an `Letfun (f . x . e)` expression:
+
+![](week-08-15.png)
+
+#### Substitutions
+
+Substitutions are used to encode what we learnt about the world by evaluating the type of an expression e 
+
+E.g if e = x + 1, we can look at the environment and know that `+` has the type `Int -> Int -> Int` so x must be of type `Int` so we would encode in the substitution that [x := Int]
+
+Another example where there are non-empty substitutions with `Letfun` on a plus expression
+
+![](week-08-16.png)
+
+#### Problem 
+
+But sometimes we run into the following problem:
+
+![](week-08-17.png)
+
+In this scenario we have applied f to a Bool which sets its type f :: Bool -> (Bool * Bool) and add it to the environment. Then we attempt to apply f to an Int but when we check in the environment f is expecting a Bool! What do we need to do?
+
+#### Solution
+
+* We need to define a set of vars we can forall quantify 
+
+* In contrast to previously where we could use the forall quantifier introduction rule whenever, we now want to restrict the vars we can introduce
+
+* TV(Γ) is the set of all free type vars that is, all the type vars that are not quantified in a forall 
+
+* for example if we have a letfun exp where f has type a and x has type b, then a & b are free type vars
+
+* We define Gen (Γ, τ):
+
+```
+Gen (Γ, τ) = ∀(TV(τ) \ TV(Γ)). τ
+``` 
+* So we want to grab all the variables which occur free in  τ but not in Γ
+
+Example:
+
+```
+Gen ({x : a , y: Int}, (a,b) ➔ b) = ∀b. (a,b) ➔ b
+```
+
+Note we only really want to do this in the `Let` expression
+
+
 
 
 
